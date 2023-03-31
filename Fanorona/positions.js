@@ -1,7 +1,5 @@
 class positions{
     constructor(left,right,top,bottom,i,j, etat=false, comptenu="N",id="piece"){
-        //i -->  0 a 4 -->y
-        //j -->  0 a 8 -->x
        this.left = left,
        this.right = right , 
        this.top = top ,

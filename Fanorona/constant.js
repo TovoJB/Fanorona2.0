@@ -23,3 +23,4 @@ const DIRECTIONS1 = [
   const COLS = 5;
   const PLAYER_1_COLOR = "#fff"; // Blanc
   const PLAYER_2_COLOR = "#000"; // Noir
+  const MIN_DEFAULT_VAL =1000

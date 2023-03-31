@@ -8,6 +8,16 @@ class pieces{
         this.circleRadius=14
         this.i = i;
         this.j=j ;
-        this.direction=[]
+        this.selectioner=false
+
+        this.direction= line.tab[i][j].direction
+    }
+    selectionerUnepiece(){
+        this.selectioner=true
+        this.color='blue'
+    }
+    deselectionerUnepiece(){
+        this.selectioner=false
+        this.color=this.colorOrigine
     }
     }

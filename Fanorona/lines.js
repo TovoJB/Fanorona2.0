@@ -4,7 +4,7 @@ class lines{
        this.height = height
 
        this.y=y
-       this.x = x
+       this.x=x
        this.left=x-width/2+50; //0
        this.right=x+width/2;//450+450 = 900
        this.top=y-height/2+50; //250-250
