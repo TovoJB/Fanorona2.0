@@ -32,5 +32,92 @@ function arePositionsEqual(pos1, pos2) {
 function isValidPosition(pos) {
    return isValidSquare(pos.i, pos.j);
  }
- 
- 
+
+ function return_Etat_dune_ligne(pos){
+   if(line.tab[pos.i][pos.j].etat){
+       return true
+   }else{return false}
+}
+
+function comparaison_2_coordoners(i,j,X,Y){
+   if((i==X)&&(j==Y)){
+       return true
+   }else{
+       return false
+   }
+}
+
+function verification_si_selectionerUnepiece(mouseX,mouseY){
+   let distace
+   decoloragePieceAvantDeSelectoner ()
+   for(one_piece of piece){
+        distace=(distanceEntre2Coordoner(mouseX , one_piece.x , mouseY , one_piece.y))
+       if(distace<14){
+           return true
+       }
+   }
+   return false
+}
+
+function rerche_Si_Une_Piece_selectioner(){
+   for(let one_piece of piece){
+       if(one_piece.selectioner){return true}}return false
+}
+
+function deselectioner_tout_piece(){
+   for(let one_piece of piece){
+      one_piece.etat=false
+   }
+}
+
+function Update_etat_ligne_en_false(){
+   for(let i=0 ; i<=4 ; i++){
+       for(let j=0 ; j<=8 ; j++ ){
+           line.tab[i][j].etat=false
+       }
+   }
+}
+
+function Update_etat_ligne_en_true(){
+   for(let i=0 ; i<=4 ; i++){
+       for(let j=0 ; j<=8 ; j++ ){
+           for(one_piece of piece){
+               if(one_piece.i==line.tab[i][j].i && one_piece.j==line.tab[i][j].j){
+                   line.tab[i][j].etat=true
+               }
+           }
+       }
+   }
+}
+
+function update_ligne(){
+   Update_etat_ligne_en_false()
+   Update_etat_ligne_en_true()
+}
+
+function piece_auto_repli_XY_grace_IJ (i,j){
+   Piece_selectioner.i =i
+   Piece_selectioner.j =j
+   Piece_selectioner.x =line.tab[i][j].x
+   Piece_selectioner.y =line.tab[i][j].y
+   }
+
+function decoloragePieceAvantDeSelectoner (){
+   for(one_piece of piece){
+       one_piece.deselectionerUnepiece()
+   }
+}
+
+
+
+function update_direction_piece(){
+   for(one_piece of piece){
+      for(let i=0 ; i<=4 ; i++){
+         for(let j=0 ; j<=8 ; j++ ){
+          if(one_piece.i==i && one_piece.j==j){
+            one_piece.direction=line.tab[i][j].direction
+          }
+         }
+     }
+   }
+}

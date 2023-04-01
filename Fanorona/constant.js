@@ -24,3 +24,4 @@ const DIRECTIONS1 = [
   const PLAYER_1_COLOR = "#fff"; // Blanc
   const PLAYER_2_COLOR = "#000"; // Noir
   const MIN_DEFAULT_VAL =1000
+  const MAX_DEP_PIECE =168.2;
