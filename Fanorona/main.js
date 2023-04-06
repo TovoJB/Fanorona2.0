@@ -8,8 +8,8 @@ const line = new lines(h/2 , w/2 , w , h ) ;
 line.draw(ctx)
 
 let piece=[]
-piece.push(new pieces("piece0" , 0 , 0 ,"red"))
-piece.push(new pieces("piece1" , 1 , 3 ,"green"))
+piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
+piece.push(new pieces("player2","piece1" , 1 , 3 ,"green"))
 
 
 let Piece_selectioner
@@ -58,7 +58,7 @@ function affichage_ligne(){
         Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
     }
     update_ligne()
-    si_prise_par_contact()
+    si_prise_par_absorption()
 }
 
 canvas.addEventListener('click',canvasClick)

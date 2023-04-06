@@ -1,5 +1,6 @@
 class pieces{
-    constructor(id , i , j ,color){
+    constructor( player, id , i , j ,color){
+        this.player=player
         this.id=id
         this.x=line.tab[i][j].x
         this.y=line.tab[i][j].y

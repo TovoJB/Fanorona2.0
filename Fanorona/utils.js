@@ -39,6 +39,8 @@ function isValidPosition(pos) {
    }else{return false}
 }
 
+
+
 function comparaison_2_coordoners(i,j,X,Y){
    if((i==X)&&(j==Y)){
        return true
