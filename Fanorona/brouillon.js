@@ -1,0 +1,1 @@
+// si une position est vide on cherche la possibiliter d apsorption si non contacte

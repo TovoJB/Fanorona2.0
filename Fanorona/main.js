@@ -8,8 +8,13 @@ const line = new lines(h/2 , w/2 , w , h ) ;
 line.draw(ctx)
 
 let piece=[]
-piece.push(new pieces("piece0" , 0 , 0 ,"red"))
-piece.push(new pieces("piece1" , 1 , 3 ,"green"))
+piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
+piece.push(new pieces("player2","piece1" , 0 , 1 ,"green"))
+piece.push(new pieces("player2","piece3" , 1 , 2 ,"green"))
+piece.push(new pieces("player2","piece4" , 1 , 0 ,"green"))
+piece.push(new pieces("player2","piece4" , 2 , 1 ,"red"))
+piece.push(new pieces("player2","piece5" , 2 , 0 ,"red"))
+
 
 
 let Piece_selectioner
@@ -22,9 +27,25 @@ let draw_piece = function(){
         ctx.fill();
         ctx.lineWidth = 5;
         ctx.strokeStyle = '#003300';
+        //ctx.setLineDash([5, 5]);
         ctx.stroke();
     }  
 }
+
+/*function drawCircle() {
+    // Dessiner le cercle avec une couleur aléatoire
+    if(prise_absorptoin_possibeles.length!==0){
+        console.log("-")
+    for(prise_absorptoin_possibele of prise_absorptoin_possibeles){
+    let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    ctx.fillStyle = randomColor;
+    ctx.beginPath();
+    ctx.arc(line.tab[prise_absorptoin_possibele.i][prise_absorptoin_possibele.j].x, line.tab[prise_absorptoin_possibele.i][prise_absorptoin_possibele.j].y, 14, 0, 2 * Math.PI);
+    ctx.fill();
+  }}}
+  
+  // Appeler la fonction drawCircle toutes les 500 millisecondes
+  setInterval(drawCircle, 500);*/
 
 function affichage_Piece(){
     for(let one_piece of piece){
@@ -58,7 +79,7 @@ function affichage_ligne(){
         Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
     }
     update_ligne()
-    si_prise_par_contact()
+    si_prise_par_absorption()
 }
 
 canvas.addEventListener('click',canvasClick)
