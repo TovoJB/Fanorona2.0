@@ -10,12 +10,12 @@ function si_prise_par_absorption(){
 function return_piece_absorbable(directions){
   prise_absorptoin_possibeles.splice(0, prise_absorptoin_possibeles.length);
  for(let direction of directions){
-  return_point__necessair_absorption(direction)//***************** */
+  return_point__necessair_absorption(direction)
   if(return_Etat_dune_ligne(direction)&& (!piece_enemi_ou_alier(direction)&&return_point__necessair_absorption(direction))){//position occuper par une piece
     prise_absorptoin_possibeles.push(direction)
   }
  }
- console.log(prise_absorptoin_possibeles)
+ //console.log(prise_absorptoin_possibeles)
 }
 
 
@@ -42,28 +42,3 @@ if(isValidSquare(i,j) && !return_Etat_dune_ligne(d)){
 } 
 return false
 }
-
-/*function trie_point__necessair_absorption(){//tokony mbola asina we not vide 
-  for(let point__necessair_absorptions of point__necessair_absorption ){
-    for(let one_piece of piece){
-      if((point__necessair_absorptions.i == one_piece.i) && (point__necessair_absorptions.j== one_piece.j)){
-        console.log(point__necessair_absorptions.indexO(point__necessair_absorptions))
-      }
-  }
-}
-}*/
-
-
-
-
-/*------------------------- */
-
-/*function ligne_etat(){
-  for(let i=0 ; i<=4 ; i++){
-      for(let j=0 ; j<=8 ; j++ ){
-              if(line.tab[i][j].etat){
-                 console.log("i:"+i+"|j:"+j)            
-          }
-      }
-  }
-}*/
