@@ -93,8 +93,8 @@ function Update_etat_ligne_en_true(){
 }
 
 function update_ligne(){
-   Update_etat_ligne_en_false()
-   Update_etat_ligne_en_true()
+   Update_etat_ligne_en_false()//fals ra tsis zavatra
+   Update_etat_ligne_en_true()//true ra misy zavatra
 }
 
 function piece_auto_repli_XY_grace_IJ (i,j){
