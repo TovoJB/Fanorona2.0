@@ -1,18 +1,16 @@
 
 let prise_absorptoin_possibeles=[]
 
-
 function si_prise_par_absorption(){
   let i = Piece_selectioner.i
   let j = Piece_selectioner.j   
-  console.log(line.tab[i][j].direction)
   return_piece_absorbable(line.tab[i][j].direction)
 }
 
 function return_piece_absorbable(directions){
   prise_absorptoin_possibeles.splice(0, prise_absorptoin_possibeles.length);
  for(let direction of directions){
-  return_point__necessair_absorption(direction)
+  return_point__necessair_absorption(direction)//***************** */
   if(return_Etat_dune_ligne(direction)&& (!piece_enemi_ou_alier(direction)&&return_point__necessair_absorption(direction))){//position occuper par une piece
     prise_absorptoin_possibeles.push(direction)
   }
@@ -29,7 +27,6 @@ function piece_enemi_ou_alier(posi){//true allier false enemie
 }
 return false
 }
-
 
 function return_point__necessair_absorption(position){
   let i;

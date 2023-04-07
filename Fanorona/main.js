@@ -79,7 +79,8 @@ function affichage_ligne(){
         Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
     }
     update_ligne()
-    si_prise_par_absorption()
+    //si_prise_par_absorption()
+    si_prise_par_contact()
 }
 
 canvas.addEventListener('click',canvasClick)
