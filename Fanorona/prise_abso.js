@@ -1,5 +1,6 @@
 
 let prise_absorptoin_possibeles=[]
+let piece_a_supprimer_absorbtion=[]
 
 function si_prise_par_absorption(){
   let i = Piece_selectioner.i
@@ -41,4 +42,17 @@ if(isValidSquare(i,j) && !return_Etat_dune_ligne(d)){
   return true
 } 
 return false
+}
+
+
+
+function selection_piece_a_supprimer(){
+  if(Piece_selectioner_avant != undefined)
+  //if()
+
+ console.log(Piece_selectioner_avant)
+ console.log(Piece_selectioner)
+ console.log("--------")
+
+
 }

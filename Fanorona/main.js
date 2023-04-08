@@ -18,6 +18,8 @@ piece.push(new pieces("player2","piece5" , 2 , 0 ,"red"))
 
 
 let Piece_selectioner
+let Piece_selectioner_avant
+let position_avant_deplacement
 
 let draw_piece = function(){
     for(let one_piece of piece){
@@ -71,6 +73,8 @@ function affichage_ligne(){
     if(rerche_Si_Une_Piece_selectioner()){
         let position_selectioner = position_pour_deplacer(mouseX,mouseY)
         if(!return_Etat_dune_ligne(position_selectioner)){
+        
+           // Piece_selectioner_avant=Piece_selectioner
             deplacementDesPieces( position_selectioner)
         }
         
@@ -81,8 +85,9 @@ function affichage_ligne(){
     update_ligne()
     si_prise_par_absorption()
     si_prise_par_contact()
-    console.log(prise_contact_possibeles)
-    console.log(prise_absorptoin_possibeles)
+    //console.log(prise_contact_possibeles)
+    //console.log(prise_absorptoin_possibeles)
+    selection_piece_a_supprimer()
 }
 
 canvas.addEventListener('click',canvasClick)

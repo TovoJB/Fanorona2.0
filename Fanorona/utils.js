@@ -98,6 +98,11 @@ function update_ligne(){
 }
 
 function piece_auto_repli_XY_grace_IJ (i,j){
+   
+   //console.log(Piece_selectioner)
+   //console.log("i:"+Piece_selectioner.i+" "+"j:"+Piece_selectioner.j +" "+ Piece_selectioner.colorOrigine)
+   Piece_selectioner_avant = new pieces(Piece_selectioner.player,Piece_selectioner.id, Piece_selectioner.i , Piece_selectioner.j ,Piece_selectioner.colorOrigine)
+   //console.log(Piece_selectioner_avant)
    Piece_selectioner.i =i
    Piece_selectioner.j =j
    Piece_selectioner.x =line.tab[i][j].x
