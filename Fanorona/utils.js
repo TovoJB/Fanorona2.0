@@ -134,6 +134,7 @@ function recherche_color (i,j){
 }
 
 function suprimer(index){
+   console.log("supprime:"+index)
    piece.splice(index,1)
 }
 

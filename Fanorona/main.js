@@ -8,18 +8,27 @@ const line = new lines(h/2 , w/2 , w , h ) ;
 line.draw(ctx)
 
 let piece=[]
-piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
+//piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
 piece.push(new pieces("player2","piece1" , 3 , 1 ,"green"))
-piece.push(new pieces("player2","piece3" , 1 , 3 ,"green"))
+//piece.push(new pieces("player2","piece3" , 1 , 3 ,"green"))
 piece.push(new pieces("player2","piece4" , 1 , 2 ,"green"))
-piece.push(new pieces("player2","piece5" , 2 , 2 ,"red"))
-piece.push(new pieces("player2","piece6" , 2 , 0 ,"red"))
-piece.push(new pieces("player2","piece7" , 1 , 4 ,"green"))
-piece.push(new pieces("player2","piece8" , 1 , 5 ,"green"))
-piece.push(new pieces("player2","piece9" , 1 , 6 ,"green"))
-piece.push(new pieces("player2","piece10" , 1 , 7 ,"green"))
-piece.push(new pieces("player2","piece11" , 1 , 8 ,"green"))
-piece.push(new pieces("player2","piece15" , 4 , 2 ,"green"))
+//piece.push(new pieces("player2","piece5" , 2 , 2 ,"red"))
+piece.push(new pieces("player2","piece6" , 2 , 1 ,"red"))
+//piece.push(new pieces("player2","piece7" , 1 , 4 ,"green"))
+//piece.push(new pieces("player2","piece8" , 1 , 5 ,"green"))
+//piece.push(new pieces("player2","piece9" , 1 , 6 ,"green"))
+//piece.push(new pieces("player2","piece10" , 1 , 7 ,"green"))
+//piece.push(new pieces("player2","piece11" , 1 , 8 ,"green"))
+//piece.push(new pieces("player2","piece15" , 4 , 2 ,"green"))
+
+piece.push(new pieces("player2","piece1" , 3 , 4 ,"red"))
+piece.push(new pieces("player2","piece4" , 1 , 5 ,"red"))
+piece.push(new pieces("player1","piece6" , 1 , 4 ,"green"))
+piece.push(new pieces("player1","piece7" , 0 , 4 ,"red"))
+piece.push(new pieces("player1","piece8" , 2 , 2 ,"green"))
+piece.push(new pieces("player1","piece9" , 1 , 3 ,"green"))
+piece.push(new pieces("player1","piece9" , 2 , 3 ,"green"))
+
 
 let Piece_selectioner
 let Piece_selectioner_avant
@@ -88,11 +97,15 @@ function affichage_ligne(){
         Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
     }
     update_ligne()
+    selection_piece_a_supprimer()
+    update_ligne()
     si_prise_par_absorption()
     si_prise_par_contact()
-    //console.log(prise_contact_possibeles)
-    //console.log(prise_absorptoin_possibeles)
-    selection_piece_a_supprimer()
+    /*console.log("-------prise_absorptoin_possibeles")
+    console.log(prise_absorptoin_possibeles)
+    console.log("-------prise_contact_possibeles")
+    console.log(prise_contact_possibeles)
+    console.log("-------")*/
 }
 
 canvas.addEventListener('click',canvasClick)
