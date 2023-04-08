@@ -9,17 +9,22 @@ line.draw(ctx)
 
 let piece=[]
 piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
-piece.push(new pieces("player2","piece1" , 0 , 1 ,"green"))
-piece.push(new pieces("player2","piece3" , 1 , 2 ,"green"))
-piece.push(new pieces("player2","piece4" , 1 , 0 ,"green"))
-piece.push(new pieces("player2","piece4" , 2 , 1 ,"red"))
-piece.push(new pieces("player2","piece5" , 2 , 0 ,"red"))
-
-
+piece.push(new pieces("player2","piece1" , 3 , 1 ,"green"))
+piece.push(new pieces("player2","piece3" , 1 , 3 ,"green"))
+piece.push(new pieces("player2","piece4" , 1 , 2 ,"green"))
+piece.push(new pieces("player2","piece5" , 2 , 2 ,"red"))
+piece.push(new pieces("player2","piece6" , 2 , 0 ,"red"))
+piece.push(new pieces("player2","piece7" , 1 , 4 ,"green"))
+piece.push(new pieces("player2","piece8" , 1 , 5 ,"green"))
+piece.push(new pieces("player2","piece9" , 1 , 6 ,"green"))
+piece.push(new pieces("player2","piece10" , 1 , 7 ,"green"))
+piece.push(new pieces("player2","piece11" , 1 , 8 ,"green"))
+piece.push(new pieces("player2","piece15" , 4 , 2 ,"green"))
 
 let Piece_selectioner
 let Piece_selectioner_avant
-let position_avant_deplacement
+
+
 
 let draw_piece = function(){
     for(let one_piece of piece){

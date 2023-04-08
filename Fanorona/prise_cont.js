@@ -1,4 +1,5 @@
 let prise_contact_possibeles=[]
+let piece_a_supprimers_contact=[]
 
 function si_prise_par_contact(){
     let i = Piece_selectioner.i
@@ -30,3 +31,47 @@ function verifie_positoion_prise_contact(position){
       } 
     return false
 }
+
+
+
+
+
+
+
+function ajout_piece_a_supprimer_contact (initI, initJ,finalI, finalJ){
+   if(piece_a_supprimers_contact.length !=0){
+      piece_a_supprimers_contact.splice(0,piece_a_supprimers_contact.length)
+    }
+    let diffi = finalI - initI;
+    let diffJ = finalJ - initJ;
+    let i = finalI;
+    let j = finalJ;
+    let k = 0;
+    
+    while(i <= 4 && i >= 0 && j <= 8 && j >= 0) {
+      if(diffi == diffJ && diffJ == 0) {
+        break;
+      }
+    
+      if(i <= 4 && i >= 0) {
+        i = i + diffi;
+      }
+    
+      if(j <= 8 && j >= 0) {
+        j = j + diffJ;
+      }
+   
+      if(i <= 4 && i >= 0 && j <= 8 && j >= 0 ) {
+        if(line.tab[i][j].etat && Piece_selectioner.colorOrigine !=recherche_color (i,j)){
+        let pos = new points(i, j);
+        piece_a_supprimers_contact[k] = pos;
+        k++;
+      }else{
+        break
+      }
+      }
+    }
+
+}
+
+

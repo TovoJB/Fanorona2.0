@@ -1,6 +1,7 @@
 
 let prise_absorptoin_possibeles=[]
-let piece_a_supprimer_absorbtion=[]
+let piece_a_supprimers_absos=[]
+
 
 function si_prise_par_absorption(){
   let i = Piece_selectioner.i
@@ -12,15 +13,14 @@ function return_piece_absorbable(directions){
   prise_absorptoin_possibeles.splice(0, prise_absorptoin_possibeles.length);
  for(let direction of directions){
   return_point__necessair_absorption(direction)
-  if(return_Etat_dune_ligne(direction)&& (!piece_enemi_ou_alier(direction)&&return_point__necessair_absorption(direction))){//position occuper par une piece
+  if(return_Etat_dune_ligne(direction)&& (!piece_enemi_ou_alier(direction)&&return_point__necessair_absorption(direction))){
     prise_absorptoin_possibeles.push(direction)
   }
  }
- //console.log(prise_absorptoin_possibeles)
 }
 
 
-function piece_enemi_ou_alier(posi){//true allier false enemie
+function piece_enemi_ou_alier(posi){
   for(let one_piece of piece){
     if((posi.i == one_piece.i) && (posi.j== one_piece.j) && (Piece_selectioner.colorOrigine==one_piece.color)){
       return true
@@ -46,13 +46,38 @@ return false
 
 
 
-function selection_piece_a_supprimer(){
-  if(Piece_selectioner_avant != undefined)
-  //if()
-
- console.log(Piece_selectioner_avant)
- console.log(Piece_selectioner)
- console.log("--------")
-
-
+function ajout_piece_a_supprimer_abso (initI, initJ,finalI, finalJ){
+  if(piece_a_supprimers_absos.length !=0){
+    piece_a_supprimers_absos.splice(0,piece_a_supprimers_absos.length)
+   }
+   let diffi = finalI - initI;
+   let diffJ = finalJ - initJ;
+   let i = initI;
+   let j = initJ;
+   let k = 0;
+   
+   while(i <= 4 && i >= 0 && j <= 8 && j >= 0) {
+    
+     if(diffi == diffJ && diffJ == 0) {
+       break;
+     }
+   
+     if(i <= 4 && i >= 0) {
+       i = i - diffi;
+     }
+   
+     if(j <= 8 && j >= 0) {
+       j = j - diffJ;
+     }
+  
+     if(i <= 4 && i >= 0 && j <= 8 && j >= 0 ) {
+       if(line.tab[i][j].etat && Piece_selectioner.colorOrigine !=recherche_color (i,j)){
+       let pos = new points(i, j);
+       piece_a_supprimers_absos[k] = pos;
+       k++;
+     }else{
+       break
+     }
+     }
+   }
 }
