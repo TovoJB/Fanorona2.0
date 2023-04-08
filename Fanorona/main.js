@@ -29,6 +29,10 @@ piece.push(new pieces("player1","piece8" , 2 , 2 ,"green"))
 piece.push(new pieces("player1","piece9" , 1 , 3 ,"green"))
 piece.push(new pieces("player1","piece9" , 2 , 3 ,"green"))
 
+piece.push(new pieces("player1","piece10" , 2 , 8 ,"green"))
+piece.push(new pieces("player1","piece11" , 2 , 7 ,"green"))
+piece.push(new pieces("player1","piece12" , 2 , 6 ,"green"))
+piece.push(new pieces("player1","piece12" , 2 , 5 ,"red"))
 
 let Piece_selectioner
 let Piece_selectioner_avant
