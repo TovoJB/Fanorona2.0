@@ -98,6 +98,7 @@ function update_ligne(){
 }
 
 function piece_auto_repli_XY_grace_IJ (i,j){
+   Piece_selectioner_avant = new pieces(Piece_selectioner.player,Piece_selectioner.id, Piece_selectioner.i , Piece_selectioner.j ,Piece_selectioner.colorOrigine)
    Piece_selectioner.i =i
    Piece_selectioner.j =j
    Piece_selectioner.x =line.tab[i][j].x
@@ -123,3 +124,24 @@ function update_direction_piece(){
      }
    }
 }
+
+function recherche_color (i,j){
+   for(one_piece of piece){
+    if(i==one_piece.i && j == one_piece.j){
+      return one_piece.colorOrigine
+    }
+   }
+}
+
+function suprimer(index){
+   piece.splice(index,1)
+}
+
+
+function suppromer_pieces(piece_a_supprimers){
+   for(piece_a_supprimer of piece_a_supprimers){
+     for(one_piece of piece){
+       if(piece_a_supprimer.i == one_piece.i && piece_a_supprimer.j== one_piece.j){
+         suprimer(piece.indexOf(one_piece))
+   }}
+ }}
