@@ -16,17 +16,17 @@ function si_prise_par_contact(){
 }}
 
 function verifie_positoion_prise_contact(position){
-        let i;
-        let j;
-        let diff_I =position.i- Piece_selectioner.i
-        let diff_J =position.j-Piece_selectioner.j
-              i = position.i +(diff_I)
-              j = position.j +(diff_J)
-      let d = new points(i,j)
+     let i;
+     let j;
+     let diff_I =position.i- Piece_selectioner.i
+     let diff_J =position.j-Piece_selectioner.j
+         i = position.i +(diff_I)
+         j = position.j +(diff_J)
+         let d = new points(i,j)
       
-      if(isValidSquare(i,j) && return_Etat_dune_ligne(d)&&!return_Etat_dune_ligne(position)&&!piece_enemi_ou_alier(d)){
+    if(isValidSquare(i,j) && return_Etat_dune_ligne(d)&&!return_Etat_dune_ligne(position)&&!piece_enemi_ou_alier(d)){
         prise_contact_possibeles.push(d)
-         return true
+        return true
       } 
-      return false
-      }
+    return false
+}

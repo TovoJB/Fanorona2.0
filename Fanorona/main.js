@@ -82,7 +82,7 @@ function affichage_ligne(){
     si_prise_par_absorption()
     si_prise_par_contact()
     console.log(prise_contact_possibeles)
-   // console.log(prise_absorptoin_possibeles)
+    console.log(prise_absorptoin_possibeles)
 }
 
 canvas.addEventListener('click',canvasClick)
