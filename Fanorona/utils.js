@@ -51,7 +51,7 @@ function comparaison_2_coordoners(i,j,X,Y){
 
 function verification_si_selectionerUnepiece(mouseX,mouseY){
    let distace
-   decoloragePieceAvantDeSelectoner ()
+   decoloragePieceAvantDeSelectioner ()
    for(one_piece of piece){
         distace=(distanceEntre2Coordoner(mouseX , one_piece.x , mouseY , one_piece.y))
        if(distace<14){
@@ -105,7 +105,7 @@ function piece_auto_repli_XY_grace_IJ (i,j){
    Piece_selectioner.y =line.tab[i][j].y
    }
 
-function decoloragePieceAvantDeSelectoner (){
+function decoloragePieceAvantDeSelectioner (){
    for(one_piece of piece){
        one_piece.deselectionerUnepiece()
    }
@@ -146,3 +146,4 @@ function suppromer_pieces(piece_a_supprimers){
          suprimer(piece.indexOf(one_piece))
    }}
  }}
+

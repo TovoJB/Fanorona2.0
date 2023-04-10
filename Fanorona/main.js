@@ -24,7 +24,7 @@ piece.push(new pieces("player2","piece3" , 2 , 1 ,"red"))
 piece.push(new pieces("player2","piece4" , 3 , 4 ,"red"))
 piece.push(new pieces("player2","piece5" , 1 , 5 ,"red"))
 piece.push(new pieces("player1","piece6" , 1 , 4 ,"green"))
-piece.push(new pieces("player1","piece7" , 0 , 4 ,"red"))
+piece.push(new pieces("player2","piece7" , 0 , 4 ,"red"))
 piece.push(new pieces("player1","piece8" , 2 , 2 ,"green"))
 piece.push(new pieces("player1","piece9" , 1 , 3 ,"green"))
 piece.push(new pieces("player1","piece10" , 2 , 3 ,"green"))
@@ -32,7 +32,7 @@ piece.push(new pieces("player1","piece10" , 2 , 3 ,"green"))
 piece.push(new pieces("player1","piece11" , 2 , 8 ,"green"))
 piece.push(new pieces("player1","piece12" , 2 , 7 ,"green"))
 piece.push(new pieces("player1","piece13" , 2 , 6 ,"green"))
-piece.push(new pieces("player1","piece14" , 2 , 5 ,"red"))
+piece.push(new pieces("player2","piece14" , 2 , 5 ,"red"))
 
 let Piece_selectioner
 let Piece_selectioner_avant
@@ -88,6 +88,8 @@ function affichage_ligne(){
     let mouseX = event.clientX - plateauGame.left ;
     let mouseY = event.clientY - plateauGame.top;
     
+
+
     if(rerche_Si_Une_Piece_selectioner()){
         let position_selectioner = position_pour_deplacer(mouseX,mouseY)
         if(!return_Etat_dune_ligne(position_selectioner)){
@@ -97,14 +99,20 @@ function affichage_ligne(){
         }
         
     }else if ( verification_si_selectionerUnepiece(mouseX,mouseY)) {
-        
-        Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
+          Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
     }
     update_ligne()
     selection_piece_a_supprimer()
     update_ligne()
     si_prise_par_absorption()
     si_prise_par_contact()
+    tour_gestion()
+    
+    if(winer()){
+        alert("on a un winer0 "+player_winer);
+    }  
+   
+    
     /*console.log("-------prise_absorptoin_possibeles")
     console.log(prise_absorptoin_possibeles)
     console.log("-------prise_contact_possibeles")
