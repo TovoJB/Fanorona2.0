@@ -112,14 +112,30 @@ function affichage_ligne(){
     si_prise_par_absorption()
     si_prise_par_contact()
 
-    tour_gestion()
+    //console.log(color_curent_player)
+    if(color_curent_player == undefined){
+        //console.log("color_curent_player !=undefined")
+        tour_gestion()
+    }else{
+        console.log("color_curent_player : "+color_curent_player)
+        console.log("2eme ou + tour , color-piece=selectioner : "+Piece_selectioner.colorOrigine)
+        if(color_curent_player==Piece_selectioner.colorOrigine){
+            decoloragePieceAvantDeSelectioner() 
+        }else{
+            tour_gestion()  
+        }
+    }
+
+    //tour_gestion()
 
     if(winer()){
-        alert("on a un winer0 "+player_winer);
+        alert("on a un gagnant "+color_curent_player);
     }  
 }
 
 canvas.addEventListener('click',canvasClick)
+
+
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

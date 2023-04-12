@@ -2,6 +2,9 @@
 let player_winer
 let nouv_select_piece = true
 let currentPlayer = "player1";
+
+let color_curent_player 
+
 let firstMove = true;
 
 let tour_next = false
@@ -44,18 +47,22 @@ if(!prise){
     nouv_select_piece= true
     firstMove = true
     currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
+    color_curent_player = Piece_selectioner.colorOrigine
+    //console.log(Piece_selectioner.colorOrigine)
+    //console.log(color_curent_player)
     decoloragePieceAvantDeSelectioner();
 }
 prise = false
 //console.log("gestion: "+rerche_Si_Une_Piece_selectioner())
 //console.log("------")
-console.log(currentPlayer)
+//console.log("Piece_selectioner.colorOrigine: "+Piece_selectioner.colorOrigine)
+console.log("--------------")
 }
   
 
 
 function winer( ){
-   /* let cpt_rouge =0
+   let cpt_rouge =0
     let cpt_ver =0
     for(let one_piece of piece){
         if(one_piece.colorOrigine == "red"){cpt_rouge++ }else {cpt_ver++}
@@ -64,7 +71,7 @@ function winer( ){
         if(cpt_rouge==0){player_winer = "player_rouge"
         }else{player_winer = "player_rouge"}
         return true }else{ return false
-    }*/
+    }
 }
 
 
