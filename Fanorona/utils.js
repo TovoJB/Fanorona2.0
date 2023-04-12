@@ -134,6 +134,8 @@ function recherche_color (i,j){
 }
 
 function suprimer(index){
+   prise = true
+   pass_supr = true
    console.log("supprime:"+index)
    piece.splice(index,1)
 }

@@ -36,7 +36,9 @@ piece.push(new pieces("player2","piece14" , 2 , 5 ,"red"))
 
 let Piece_selectioner
 let Piece_selectioner_avant
-
+let prise = true ;
+//let suppression = true
+//let currentPlayer = 1
 
 
 let draw_piece = function(){
@@ -89,7 +91,7 @@ function affichage_ligne(){
     let mouseY = event.clientY - plateauGame.top;
     
 
-
+    console.log("main: "+rerche_Si_Une_Piece_selectioner())
     if(rerche_Si_Une_Piece_selectioner()){
         let position_selectioner = position_pour_deplacer(mouseX,mouseY)
         if(!return_Etat_dune_ligne(position_selectioner)){
@@ -99,25 +101,22 @@ function affichage_ligne(){
         }
         
     }else if ( verification_si_selectionerUnepiece(mouseX,mouseY)) {
+          prise = true
           Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
+         // console.log(Piece_selectioner)
     }
+    
     update_ligne()
     selection_piece_a_supprimer()
     update_ligne()
     si_prise_par_absorption()
     si_prise_par_contact()
+
     tour_gestion()
-    
+
     if(winer()){
         alert("on a un winer0 "+player_winer);
     }  
-   
-    
-    /*console.log("-------prise_absorptoin_possibeles")
-    console.log(prise_absorptoin_possibeles)
-    console.log("-------prise_contact_possibeles")
-    console.log(prise_contact_possibeles)
-    console.log("-------")*/
 }
 
 canvas.addEventListener('click',canvasClick)
