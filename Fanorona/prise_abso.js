@@ -46,6 +46,7 @@ return false
 
 
 
+
 function ajout_piece_a_supprimer_abso (initI, initJ,finalI, finalJ){
   if(piece_a_supprimers_absos.length !=0){
     piece_a_supprimers_absos.splice(0,piece_a_supprimers_absos.length)

@@ -1,7 +1,7 @@
 
 function selectionerUnepiece(mouseX,mouseY){
     let distace
-    decoloragePieceAvantDeSelectoner ()
+    decoloragePieceAvantDeSelectioner ()
     for(one_piece of piece){
          distace=(distanceEntre2Coordoner(mouseX , one_piece.x , mouseY , one_piece.y))
         if(distace<14){
