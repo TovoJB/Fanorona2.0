@@ -8,19 +8,9 @@ const line = new lines(h/2 , w/2 , w , h ) ;
 line.draw(ctx)
 
 let piece=[]
-//piece.push(new pieces("player1","piece0" , 0 , 0 ,"red"))
 piece.push(new pieces("player2","piece1" , 3 , 1 ,"green"))
-//piece.push(new pieces("player2","piece3" , 1 , 3 ,"green"))
 piece.push(new pieces("player2","piece2" , 1 , 2 ,"green"))
-//piece.push(new pieces("player2","piece5" , 2 , 2 ,"red"))
 piece.push(new pieces("player2","piece3" , 2 , 1 ,"red"))
-//piece.push(new pieces("player2","piece7" , 1 , 4 ,"green"))
-//piece.push(new pieces("player2","piece8" , 1 , 5 ,"green"))
-//piece.push(new pieces("player2","piece9" , 1 , 6 ,"green"))
-//piece.push(new pieces("player2","piece10" , 1 , 7 ,"green"))
-//piece.push(new pieces("player2","piece11" , 1 , 8 ,"green"))
-//piece.push(new pieces("player2","piece15" , 4 , 2 ,"green"))
-
 piece.push(new pieces("player2","piece4" , 3 , 4 ,"red"))
 piece.push(new pieces("player2","piece5" , 1 , 5 ,"red"))
 piece.push(new pieces("player1","piece6" , 1 , 4 ,"green"))
@@ -39,36 +29,41 @@ let Piece_selectioner_avant
 let prise = true ;
 //let suppression = true
 //let currentPlayer = 1
+let cpt=0
 
-
-let draw_piece = function(){
-    for(let one_piece of piece){
-        ctx.beginPath();
-        ctx.arc(one_piece.x, one_piece.y, one_piece.circleRadius , 0, 2 * Math.PI,false);
-        ctx.fillStyle = one_piece.color;
-        ctx.fill();
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#003300';
-        //ctx.setLineDash([5, 5]);
-        ctx.stroke();
-    }  
+function reche_coordonner_sur_tab(coord , tabs){
+    for(let tab of tabs){
+        if(coord.i == tab.i && coord.j == tab.j){
+            return true
+        }
+    }
+  return false
 }
 
-/*function drawCircle() {
-    // Dessiner le cercle avec une couleur aléatoire
-    if(prise_absorptoin_possibeles.length!==0){
-        console.log("-")
-    for(prise_absorptoin_possibele of prise_absorptoin_possibeles){
-    let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-    ctx.fillStyle = randomColor;
-    ctx.beginPath();
-    ctx.arc(line.tab[prise_absorptoin_possibele.i][prise_absorptoin_possibele.j].x, line.tab[prise_absorptoin_possibele.i][prise_absorptoin_possibele.j].y, 14, 0, 2 * Math.PI);
-    ctx.fill();
-  }}}
-  
-  // Appeler la fonction drawCircle toutes les 500 millisecondes
-  setInterval(drawCircle, 500);*/
+let draw_piece = function(){
+    let borer_circoe_color
+    for(let one_piece of piece){
 
+   if(prise_absorptoin_possibeles != undefined && prise_contact_possibeles !=undefined){
+    if ( reche_coordonner_sur_tab(one_piece , prise_absorptoin_possibeles) ||reche_coordonner_sur_tab(one_piece , prise_contact_possibeles)
+    ){
+        borer_circoe_color='#95339c'
+    }else{
+        borer_circoe_color='#003300'
+    }
+   }else{
+    borer_circoe_color='#003300'
+   }
+
+    ctx.beginPath();
+    ctx.arc(one_piece.x, one_piece.y, one_piece.circleRadius , 0, 2 * Math.PI,false);
+    ctx.fillStyle = one_piece.color;
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = borer_circoe_color;
+    ctx.stroke();
+ }  
+}
 function affichage_Piece(){
     for(let one_piece of piece){
         console.log(one_piece)
