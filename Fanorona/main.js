@@ -61,6 +61,14 @@ piece.push(new pieces("player1","piece42" , 4 , 6 ,"red"))
 piece.push(new pieces("player1","piece43" , 4 , 7 ,"red"))
 piece.push(new pieces("player1","piece44" , 4 , 8 ,"red"))
 
+/*piece.push(new pieces("player2","piece2" , 1 , 1 ,"green"))
+piece.push(new pieces("player2","piece3" , 1 , 2 ,"green"))
+
+piece.push(new pieces("player2","piece4" , 1 , 4 ,"red"))
+piece.push(new pieces("player2","piece5" , 1 , 5 ,"green"))
+piece.push(new pieces("player2","piece6" , 1 , 6 ,"green"))*/
+
+
 let Piece_selectioner
 let Piece_selectioner_avant
 let prise = true ;
