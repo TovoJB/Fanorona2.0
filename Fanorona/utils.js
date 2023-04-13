@@ -1,5 +1,4 @@
 function lerp(A,B,t){
-    // console.log(A , B , t) // A=10 , B=190 , t=0.33 ou 0.66
      return (A+(B-A)*t);
  }
 function pairepOuinpaire(a){
@@ -15,20 +14,19 @@ function pairepOuinpaire(a){
       return false 
    }
  }
- function distanceEntre2Coordoner(Mx , Sx , My , Sy){ // distance Entre 2 Coordoner
+
+ function distanceEntre2Coordoner(Mx , Sx , My , Sy){
     return (Math.sqrt((Mx - Sx) ** 2 + (My - Sy) ** 2))
  }
 
-// Fonction pour vérifier si une case est valide (c'est-à-dire qu'elle se trouve sur le plateau)
 function isValidSquare(col,row) {
    return row >= 0 && row < ROWS && col >= 0 && col < COLS;
  }
-// Fonction pour vérifier si deux positions sont égales
+
 function arePositionsEqual(pos1, pos2) {
    return pos1.row === pos2.row && pos1.col === pos2.col;
  }
 
- // Fonction pour vérifier si une position est valide (c'est-à-dire qu'elle se trouve sur le plateau)
 function isValidPosition(pos) {
    return isValidSquare(pos.i, pos.j);
  }
@@ -38,8 +36,6 @@ function isValidPosition(pos) {
        return true
    }else{return false}
 }
-
-
 
 function comparaison_2_coordoners(i,j,X,Y){
    if((i==X)&&(j==Y)){
@@ -93,12 +89,11 @@ function Update_etat_ligne_en_true(){
 }
 
 function update_ligne(){
-   Update_etat_ligne_en_false()//fals ra tsis zavatra
-   Update_etat_ligne_en_true()//true ra misy zavatra
+   Update_etat_ligne_en_false()
+   Update_etat_ligne_en_true()
 }
 
 function piece_auto_repli_XY_grace_IJ (i,j){
-   //console.log(Piece_selectioner)
    Piece_selectioner_avant = new pieces(Piece_selectioner.player,Piece_selectioner.id, Piece_selectioner.i , Piece_selectioner.j ,Piece_selectioner.colorOrigine)
    Piece_selectioner.i =i
    Piece_selectioner.j =j
@@ -111,8 +106,6 @@ function decoloragePieceAvantDeSelectioner (){
        one_piece.deselectionerUnepiece()
    }
 }
-
-
 
 function update_direction_piece(){
    for(one_piece of piece){
@@ -137,7 +130,6 @@ function recherche_color (i,j){
 function suprimer(index){
    prise = true
    pass_supr = true
-   console.log("supprime:"+index)
    piece.splice(index,1)
 }
 
@@ -150,3 +142,19 @@ function suppromer_pieces(piece_a_supprimers){
    }}
  }}
 
+ function copie_tabs1_vers_tabs2(tabs1 , tabs2){
+   for(let tab1 of tabs1){
+     let p = new points(tab1.i , tab1.j)
+     tabs2.push(p)
+   }
+ }
+
+ function suprime_element_egal_dans_des_tableau(tab1s , tabs2){
+   for(let tab1 of tab1s){
+     for(let tab2 of tabs2){
+       if(tab1.i==tab2.i && tab1.j==tab2.j){
+         tab1s.splice(tab1s.indexOf(tab1),1);
+       }
+     }
+   }
+ }

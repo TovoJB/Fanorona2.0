@@ -17,7 +17,10 @@ function return_piece_absorbable(directions){
     prise_absorptoin_possibeles.push(direction)
   }
  }
+suprime_element_egal_dans_des_tableau(prise_absorptoin_possibeles, rest_du_double_prises)
 }
+
+
 
 
 function piece_enemi_ou_alier(posi){

@@ -35,8 +35,6 @@ function position_pour_deplacer(mouseX,mouseY){
 }
 
 function deplacementDesPieces(position_selectioner ){
-    
-    // Piece_selectioner_avant=Piece_selectioner
     piece_auto_repli_XY_grace_IJ (position_selectioner.i,position_selectioner.j)
 }
 
