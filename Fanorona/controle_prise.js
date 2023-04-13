@@ -5,15 +5,17 @@ function selection_piece_a_supprimer(){
      
       if(piece_a_supprimers_absos.length !=0 && piece_a_supprimers_contact.length !=0){//pour 2 player
         if (confirm("ok pour prise par contacte et annuler pour absorption ?", "Oui", "Non")) {
-         // console.log("if if")
+          //console.log("if if")
             suppromer_pieces(piece_a_supprimers_contact)
           } else {
-           // console.log("if else")
+          //  console.log("if else")
             suppromer_pieces(piece_a_supprimers_absos)
           }
       }else{
         if(piece_a_supprimers_absos.length !=0){
-         // console.log("else if")
+        //  console.log("else if")
+         // console.log(piece_a_supprimers_absos)
+         // console.log(Piece_selectioner_avant)
         suppromer_pieces(piece_a_supprimers_absos)
       }else{
        // console.log("else else")

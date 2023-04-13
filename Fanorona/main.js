@@ -22,6 +22,7 @@ piece.push(new pieces("player2","piece10" , 1 , 0 ,"green"))
 piece.push(new pieces("player2","piece11" , 1 , 1 ,"green"))
 piece.push(new pieces("player2","piece12" , 1 , 2 ,"green"))
 piece.push(new pieces("player2","piece13" , 1 , 3 ,"green"))
+
 piece.push(new pieces("player2","piece14" , 1 , 4 ,"green"))
 piece.push(new pieces("player2","piece15" , 1 , 5 ,"green"))
 piece.push(new pieces("player2","piece16" , 1 , 6 ,"green"))
@@ -148,8 +149,8 @@ function affichage_ligne(){
         //console.log("color_curent_player !=undefined")
         tour_gestion()
     }else{
-        console.log("color_curent_player : "+color_curent_player)
-        console.log("2eme ou + tour , color-piece=selectioner : "+Piece_selectioner.colorOrigine)
+       // console.log("color_curent_player : "+color_curent_player)
+       // console.log("2eme ou + tour , color-piece=selectioner : "+Piece_selectioner.colorOrigine)
         if(color_curent_player==Piece_selectioner.colorOrigine){
             decoloragePieceAvantDeSelectioner() 
         }else{
