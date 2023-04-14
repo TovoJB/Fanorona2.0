@@ -1,11 +1,10 @@
 let prise_contact_possibeles=[]
-let piece_a_supprimers_contact=[]
+let piece_a_supprimers_contacts=[]
 
 function si_prise_par_contact(){
     let i = Piece_selectioner.i
     let j = Piece_selectioner.j   
     return_piece_contacte(line.tab[i][j].direction)
-    //console.log(prise_contact_possibeles)
   }
 
   function return_piece_contacte(directions){
@@ -14,7 +13,9 @@ function si_prise_par_contact(){
     if(!return_Etat_dune_ligne(direction)){
         verifie_positoion_prise_contact(direction)
     }
-}}
+}
+suprime_element_egal_dans_des_tableau(prise_contact_possibeles, rest_du_double_prises)
+}
 
 function verifie_positoion_prise_contact(position){
      let i;
@@ -32,15 +33,9 @@ function verifie_positoion_prise_contact(position){
     return false
 }
 
-
-
-
-
-
-
 function ajout_piece_a_supprimer_contact (initI, initJ,finalI, finalJ){
-   if(piece_a_supprimers_contact.length !=0){
-      piece_a_supprimers_contact.splice(0,piece_a_supprimers_contact.length)
+   if(piece_a_supprimers_contacts.length !=0){
+      piece_a_supprimers_contacts.splice(0,piece_a_supprimers_contacts.length)
     }
     let diffi = finalI - initI;
     let diffJ = finalJ - initJ;
@@ -64,14 +59,15 @@ function ajout_piece_a_supprimer_contact (initI, initJ,finalI, finalJ){
       if(i <= 4 && i >= 0 && j <= 8 && j >= 0 ) {
         if(line.tab[i][j].etat && Piece_selectioner.colorOrigine !=recherche_color (i,j)){
         let pos = new points(i, j);
-        piece_a_supprimers_contact[k] = pos;
+        piece_a_supprimers_contacts[k] = pos;
         k++;
       }else{
         break
       }
       }
     }
-
+    //console.log("piece_a_supprimers_contacts")
+    //console.log(piece_a_supprimers_contacts)
 }
 
 

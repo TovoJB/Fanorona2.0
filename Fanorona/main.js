@@ -61,14 +61,6 @@ piece.push(new pieces("player1","piece42" , 4 , 6 ,"red"))
 piece.push(new pieces("player1","piece43" , 4 , 7 ,"red"))
 piece.push(new pieces("player1","piece44" , 4 , 8 ,"red"))
 
-/*piece.push(new pieces("player2","piece2" , 1 , 1 ,"green"))
-piece.push(new pieces("player2","piece3" , 1 , 2 ,"green"))
-
-piece.push(new pieces("player2","piece4" , 1 , 4 ,"red"))
-piece.push(new pieces("player2","piece5" , 1 , 5 ,"green"))
-piece.push(new pieces("player2","piece6" , 1 , 6 ,"green"))*/
-
-
 let Piece_selectioner
 let Piece_selectioner_avant
 let prise = true ;
@@ -111,40 +103,31 @@ let draw_piece = function(){
 }
 function affichage_Piece(){
     for(let one_piece of piece){
-        console.log(one_piece)
     }
 }
 
 function affichage_ligne(){
     for(let i=0 ; i<=4 ; i++){
         for(let j=0 ; j<=8 ; j++ ){
-           console.log("tab["+i+"]["+j+"]:"+line.tab[i][j].etat)
-           
         }
     }
-    console.log("-------------------")
 }
 
  function canvasClick(event){
     let plateauGame = canvas.getBoundingClientRect();
     let mouseX = event.clientX - plateauGame.left ;
     let mouseY = event.clientY - plateauGame.top;
-    
 
-    console.log("main: "+rerche_Si_Une_Piece_selectioner())
     if(rerche_Si_Une_Piece_selectioner()){
         let position_selectioner = position_pour_deplacer(mouseX,mouseY)
         if(!return_Etat_dune_ligne(position_selectioner)){
-        
-           // Piece_selectioner_avant=Piece_selectioner
             deplacementDesPieces( position_selectioner)
         }
         
     }else if ( verification_si_selectionerUnepiece(mouseX,mouseY)) {
           prise = true
           Piece_selectioner=selectionerUnepiece(mouseX,mouseY)
-         // console.log(Piece_selectioner)
-    }
+        }
     
     update_ligne()
     selection_piece_a_supprimer()
@@ -152,30 +135,21 @@ function affichage_ligne(){
     si_prise_par_absorption()
     si_prise_par_contact()
 
-    //console.log(color_curent_player)
     if(color_curent_player == undefined){
-        //console.log("color_curent_player !=undefined")
         tour_gestion()
     }else{
-       // console.log("color_curent_player : "+color_curent_player)
-       // console.log("2eme ou + tour , color-piece=selectioner : "+Piece_selectioner.colorOrigine)
         if(color_curent_player==Piece_selectioner.colorOrigine){
             decoloragePieceAvantDeSelectioner() 
         }else{
             tour_gestion()  
         }
     }
-
-    //tour_gestion()
-
     if(winer()){
         alert("on a un gagnant "+color_curent_player);
     }  
 }
 
 canvas.addEventListener('click',canvasClick)
-
-
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

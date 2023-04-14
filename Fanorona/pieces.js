@@ -10,7 +10,6 @@ class pieces{
         this.i = i;
         this.j=j ;
         this.selectioner=false
-
         this.direction= line.tab[i][j].direction
     }
     selectionerUnepiece(){

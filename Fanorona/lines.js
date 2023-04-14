@@ -23,13 +23,10 @@ class lines{
       this.tab=[]
 
       for (let i = 0; i <= 4; i++) {
-        // Initialisation d'un tableau imbriqué vide pour chaque itération de la boucle extérieure
         this.tab[i] = [];
       
         for (let j = 0; j <= 8; j++) {
-          // Création d'un nouvel objet personne avec les indices i et j
           let p = new positions(this.left,this.right,this.top,this.bottom,i,j);
-          // Ajout de l'objet personne créé au tableau imbriqué correspondant
           this.tab[i][j] = p;
         }
       }
@@ -49,14 +46,10 @@ class lines{
         }
     }
     }
-
-    
-
-
     draw(ctx){
       ctx.lineWidth=2;
       ctx.strokeStyle="black";
-      /*-----------------horizontal------------------------*/
+      /*-----------------horizontal----------------*/
        ctx.beginPath();
        
        ctx.moveTo(this.tab[0][1].x,this.tab[0][1].y);
@@ -80,7 +73,7 @@ class lines{
 
        ctx.moveTo(this.tab[0][7].x,this.tab[0][1].y);
        ctx.lineTo(this.tab[0][7].x,this.tab[4][4].y);
-      /*------------------vertical---------------------------*/
+      /*------------------vertical-----------------*/
        ctx.moveTo(this.tab[1][0].x,this.tab[1][0].y);
        ctx.lineTo(this.tab[1][8].x,this.tab[1][8].y);
 
@@ -89,7 +82,7 @@ class lines{
 
        ctx.moveTo(this.tab[3][0].x,this.tab[3][0].y);
        ctx.lineTo(this.tab[3][8].x,this.tab[3][8].y);
-       /*------------------oblic ---------------------------*/
+       /*------------------oblic ------------------*/
 
        ctx.moveTo(this.tab[2][0].x,this.tab[2][0].y);
        ctx.lineTo(this.tab[0][2].x,this.tab[4][4].y);
@@ -106,7 +99,7 @@ class lines{
        ctx.moveTo(this.tab[0][6].x,this.tab[0][1].y);
        ctx.lineTo(this.tab[2][8].x,this.tab[2][8].y);
 
-      /*------------------oblic ---------------------------*/
+      /*------------------oblic ------------------*/
       ctx.moveTo(this.tab[2][0].x,this.tab[2][0].y);
       ctx.lineTo(this.tab[0][2].x,this.tab[0][1].y);
       
