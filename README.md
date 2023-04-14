@@ -27,6 +27,10 @@ Merci de m'avoir écouté.
 - Gérer les règles spéciales de mouvement
 - Gérer les conditions de victoire
 
+## Demo
+
+https://tovojb.github.io/Fanorona2.0/
+
 ## Documentation
 
 [Fanorona wiki](https://fr.wikipedia.org/wiki/Fanorona)  
